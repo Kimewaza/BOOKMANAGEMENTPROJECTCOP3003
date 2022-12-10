@@ -3,7 +3,8 @@
 using namespace std;
 
 void Book::createBook() {
-	clear_screen();
+	//clear_screen();
+	system("cls");
 	int bookID = 0; //new counter
 	cout << "\n\n\t\t\t\t\t\tADDING BOOK: " << "\n\n";
 	cout << "NAME OF BOOK: ";
@@ -24,7 +25,7 @@ void Book::createBook() {
 	//and after searching it online a .dat was better apparently.
 	//bookDetail = to_string(bookID) + ", BOOK NAME: " + bookName + ", AUTHOR NAME: " + authorName;
 	bookDetail = to_string(bookID) + "\t\t\t" + bookName + "\t\t\t" + authorName;
-	file << bookDetail << endl;
+	file << bookDetail << "\n";
 	file.close();
 	cout << "Book Successfully Created" << endl << "BOOK ID:\t\tBOOK NAME:\t\t\tAUTHOR:\n" << bookDetail << endl;
 
@@ -32,7 +33,7 @@ void Book::createBook() {
 void Book::displayBooks() {
 	//system("cls");
 	clear_screen();
-	cout << "\n\nDISPLAYING ALL BOOKS\n\nBOOK ID : \t\tBOOK NAME : \t\t\tAUTHOR:\n";
+	cout << "\n\nDISPLAYING ALL BOOKS\nBOOK ID : \t\tBOOK NAME : \t\t\tAUTHOR:\n";
 	ifstream outfile("bookdatabase.dat");
 	string x;
 	while (getline(outfile, x)) {
@@ -117,6 +118,7 @@ void Book::delete_line() {
 	// rename the file
 	rename("temp.dat", "bookdatabase.dat");
 }
+
 void clear_screen() {
 	string(10, '\n');
 }

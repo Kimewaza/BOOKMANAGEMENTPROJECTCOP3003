@@ -18,47 +18,50 @@ https://www.geeksforgeeks.org/program-delete-line-given-line-number-file/
 
 Book bk; // had to set it globally or else some of the inputs and functions wouldn't work in other places
 
-void mainMenu() {
-	clear_screen();
-	cout << "\nPLEASE INPUT AN OPTION AVAILABLE ON THE SCREEN \n\t[1]-ADD BOOK\n\t"
-		"[2]-MODIFY PREEXISTING BOOK\n\t[3]-DISPLAY BOOKS\n\t[4]-Delete Book\n\t[0]-EXIT\n\n\t\tCHOICE [ ]\b\b";
-	int input = 0;
-	cin >> input;
-	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	if (input != 0 && input <= 4) {
-		switch (input) {
-		case 1:
-			bk.createBook();
-			break;
-		case 2:
-			bk.modifyBook();
-			break;
-		case 3:
-			bk.displayBooks();
-			break;
-		case 4:
-			/*
-			int line_num;
-			cout << "Enter the ID of the book to Delete: ";     //Removed the input into the function itself  and removed the parameters for it
-			cin >> line_num;
-			*/
-			bk.delete_line();
-			break;
+
+	void mainMenu() {
+		system("cls");
+		cout << "\nPLEASE INPUT AN OPTION AVAILABLE ON THE SCREEN \n\t[1]-ADD BOOK\n\t"
+			"[2]-MODIFY PREEXISTING BOOK\n\t[3]-DISPLAY BOOKS\n\t[4]-Delete Book\n\t[0]-EXIT\n\n\t\tCHOICE [ ]\b\b";
+		int input = 0;
+		cin >> input;
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		if (input != 0 && input <= 4) {
+			switch (input) {
+			case 1:
+				bk.createBook();
+				break;
+			case 2:
+				bk.modifyBook();
+				break;
+			case 3:
+				bk.displayBooks();
+				break;
+			case 4:
+				/*
+				int line_num;
+				cout << "Enter the ID of the book to Delete: ";     //Removed the input into the function itself  and removed the parameters for it
+				cin >> line_num;
+				*/
+				bk.delete_line();
+				break;
+			}
+		}
+
+		else if (input > 4) {
+			cout << "INVALID INPUT. \nPlease pick a valid input" << endl;
+			mainMenu();
+		}
+		else {
+			exit(0);
 		}
 	}
-	else if (input > 4) {
-		cout << "INVALID INPUT. \nPlease pick a valid input" << endl;
-		mainMenu();
-	}
-	else {
-		exit(0);
-	}
-}
+
 
 int main() {
 	cout << "\n\n\tBOOK MANAGEMENT SYSTEM\n\t\tBY: JOHN NGUYEN, AARON MARKOWITZ, and ALEXANDER FATJO";
 	_getch(); //conio.h file allows for this. Basically holds the screen until something is inputted
-	clear_screen();
+	system("cls");
 	string input1;
 	while (true) {
 		mainMenu();

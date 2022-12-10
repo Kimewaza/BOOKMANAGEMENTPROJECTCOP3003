@@ -1,5 +1,3 @@
 ﻿  Book.cpp
-C:\Users\johno\source\repos\COP3003V2\COP3003V2\Book.cpp(78,39): warning C4390: ';': empty controlled statement found; is this the intent?
-  Source.cpp
-  Generating Code...
+C:\Users\johno\source\repos\COP3003V2\COP3003V2\Book.cpp(79,39): warning C4390: ';': empty controlled statement found; is this the intent?
   COP3003V2.vcxproj -> C:\Users\johno\source\repos\COP3003V2\x64\Debug\COP3003V2.exe
